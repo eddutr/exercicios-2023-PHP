@@ -43,5 +43,12 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
                 }
             }
         }
+        # salvar info
+        $dados[] = [
+            'Titulo' => $titulo[0],
+            'ID' => $id[0],
+            'Tipo' => $tipo[0],
+            'Autores' => $autores
+        ];
     }
 }
