@@ -72,3 +72,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 $spreadsheet = new Spreadsheet();
 
 $sheet = $spreadsheet->getActiveSheet();
+
+$sheet->setCellValue('A1', 'ID');
+$sheet->setCellValue('B1', 'Title');
+$sheet->setCellValue('C1', 'Type');
