@@ -82,5 +82,18 @@ foreach ($dados as $dado) {
     $sheet->setCellValue('A' . $row, $dado['ID']);
     $sheet->setCellValue('B' . $row, $dado['Titulo']);
     $sheet->setCellValue('C' . $row, $dado['Tipo']);
+
+    $contador = 1;
+    $column = 'D';
+    foreach ($dado['Autores'] as $autor) {
+        $sheet->setCellValue($column . 1, "Author $contador");
+
+        $sheet->setCellValue($column . $row, $autor['Nome']);
+        $column++;
+        $sheet->setCellValue($column . 1, "Author $contador Institution");
+        $sheet->setCellValue($column . $row, $autor['Instituicao']);
+        $column++;
+        $contador++;
+    }
     $row++;
 }
