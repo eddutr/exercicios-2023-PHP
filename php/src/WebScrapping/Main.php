@@ -52,3 +52,14 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
         ];
     }
 }
+
+foreach ($dados as $dado) {
+    echo "<br> <b>ID: </b>" . $dado['ID'] . "\n";
+    echo "<br> <b>Título: </b>" . $dado['Titulo'] . "\n";
+    echo "<br> <b>Tipo: </b>" . $dado['Tipo'] . "\n";
+    echo "<br> <b>Autores: </b>";
+    foreach ($dado['Autores'] as $autor) {
+        echo "<br>" . $autor['Nome'] . ", " . $autor['Instituicao'] . ";\n";
+    }
+    echo "<br>";
+}
