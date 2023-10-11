@@ -14,5 +14,10 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
         if (preg_match_all('/<h4 class="my-xs paper-title">(.*?)<\/h4>/', $match, $matchTitle)) {
             $titulo = $matchTitle[1];;
         }
+
+        # retornar id
+        if (preg_match_all('/<div class="volume-info">([0-9]+)<\/div>/', $match, $matchID)) {
+            $id = $matchID[1];
+        }
     }
 }
