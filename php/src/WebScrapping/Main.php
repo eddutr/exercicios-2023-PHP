@@ -103,3 +103,8 @@ $styles = [
         'bold' => true
     ]
 ];
+
+$sheet->getStyle('A1:AZ1')->applyFromArray($styles);
+
+$writer = new Xlsx($spreadsheet);
+$writer->save('planilha.xlsx');
