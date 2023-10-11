@@ -24,5 +24,9 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
         if (preg_match_all('/<div class="tags mr-sm">(.*?)<\/div>/', $match, $matchTipo)) {
             $tipo = $matchTipo[1];
         }
+
+        # retornar autores e instituição
+        if (preg_match_all('/<div class="authors">(.*?)<\/div>/', $match, $autoresMatches)) {
+        }
     }
 }
