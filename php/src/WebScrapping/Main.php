@@ -26,7 +26,22 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
         }
 
         # retornar autores e instituição
+        $autores = [];
         if (preg_match_all('/<div class="authors">(.*?)<\/div>/', $match, $autoresMatches)) {
+            foreach ($autoresMatches[0] as $autorMatch) {
+                $autor = '';
+                $instituicao = '';
+
+                if ((preg_match_all('/<span title=".*?">(.*?);<\/span>/', $autorMatch, $matchNomeAutor)) and (preg_match_all('/<span title="(.*?)">.*?;<\/span>/', $autorMatch, $matchInstituicaoAutor))) {
+                    for ($i = 0; $i < count($matchNomeAutor[0]); $i++) {
+                        # salvar info
+                        $autores[] = [
+                            'Nome' => $matchNomeAutor[1][$i],
+                            'Instituicao' => $matchInstituicaoAutor[1][$i]
+                        ];
+                    }
+                }
+            }
         }
     }
 }
