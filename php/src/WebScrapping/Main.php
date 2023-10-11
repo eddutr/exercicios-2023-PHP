@@ -76,3 +76,11 @@ $sheet = $spreadsheet->getActiveSheet();
 $sheet->setCellValue('A1', 'ID');
 $sheet->setCellValue('B1', 'Title');
 $sheet->setCellValue('C1', 'Type');
+
+$row = 2;
+foreach ($dados as $dado) {
+    $sheet->setCellValue('A' . $row, $dado['ID']);
+    $sheet->setCellValue('B' . $row, $dado['Titulo']);
+    $sheet->setCellValue('C' . $row, $dado['Tipo']);
+    $row++;
+}
