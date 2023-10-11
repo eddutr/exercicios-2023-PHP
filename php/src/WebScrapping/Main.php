@@ -19,5 +19,10 @@ if (preg_match_all('/<a href="https:\/\/proceedings.science\/proceedings\/100227
         if (preg_match_all('/<div class="volume-info">([0-9]+)<\/div>/', $match, $matchID)) {
             $id = $matchID[1];
         }
+
+        # retornar tipo
+        if (preg_match_all('/<div class="tags mr-sm">(.*?)<\/div>/', $match, $matchTipo)) {
+            $tipo = $matchTipo[1];
+        }
     }
 }
