@@ -97,3 +97,9 @@ foreach ($dados as $dado) {
     }
     $row++;
 }
+
+$styles = [
+    'font' => [
+        'bold' => true
+    ]
+];
